@@ -55,3 +55,32 @@ table {
 html, body {
     height: 100%;
 }
+body{
+line-height: @bodyLH;
+color: @white;
+background-color: @bg;
+}
+h1 {
+	font-size: @headlineFontSize;
+}
+h2 {
+	font-size: @titleFontSize;
+}
+p {
+	font-size: @paragraphFontSize;
+	line-height: @paragraphLH;
+}
+h3 {
+	font-size: @subtitleFontSize;
+}
+a {
+	font-size: @anchorFontSize;
+	text-decoration: none;
+	color: @anchor;
+	&:hover {
+	color: @anchorHover;
+	}
+}
+em {
+	font-weight: bold;
+}
