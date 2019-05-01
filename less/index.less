@@ -10,19 +10,17 @@
   margin: 0 auto;
   max-width: 750px;
   width: @expand;
-  display: flex;
-  flex-direction: column;
+  .displayFlex(column);
   align-content: center;
 
   header,
   footer {
-    display: flex;
-    flex-direction: row-reverse;
+    .displayFlex(row-reverse);
     padding: @allPadding;
   }
 
   nav {
-    display: flex;
+    .displayFlex(row);
     width: 50%;
     justify-content: space-around;
   }
@@ -33,19 +31,19 @@
     border-radius: @imgBr;
     box-shadow: @mainShadow;
   }
-
+  //content that englobes everything in the middle
   .main-content {
     width: @expand;
-    display: flex;
-    flex-direction: column;
+    .displayFlex(column);
     background-color: @innerBg;
     padding: @allPadding;
     box-shadow: @mainShadow;
   }
-  .top-content {
+
+  .banner {
     width: @expand;
     background-color: @red;
-    display: flex;
+    .displayFlex(row);
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -54,23 +52,10 @@
       font-size: @quoteFontSize;
     }
   }
-  .signature {
-    height: @signatureSize;
-    width: auto;
-    border-radius: 0%;
-    box-shadow: none;
-    align-self: flex-end;
-    margin: @top-bottomPadding;
-    margin-right: 2rem;
-  }
-  .about {
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-  }
+  
+  //general styles for content
   .content {
-    display: flex;
-    flex-direction: column;
+    .displayFlex(column);
 
     h2 {
       margin: 1.6rem 0;
@@ -79,56 +64,82 @@
       font-weight: @bold;
     }
     .box {
-      display: flex;
+      .displayFlex(row);
       justify-content: space-between;
       padding: @sidesPadding;
       border-bottom: 0.2rem solid @bg;
     }
-  }
-  .general {
-    display: flex;
-    flex-direction: row;
-    div {
-      width: 48%;
+    .top {
+      .displayFlex(column);
+      text-align: justify;
+      .signature {
+        height: @signatureSize;
+        width: auto;
+        border-radius: 0%;
+        box-shadow: none;
+        align-self: flex-end;
+        margin: @top-bottomPadding;
+        margin-right: 2rem;
+      }
+    }
+    .middle {
+      .displayFlex(row);
+      div {
+        width: 41%;
+      }
+    }
+    .bottom {
+      .displayFlex(column);
+      align-items: center;
+      border-bottom: none;
     }
   }
 
+  //specifc styling for content
   .personal section {
     height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    .displayFlex(column);
+    flex-wrap: wrap;
+    justify-content: center;
+    width: @expand;
+    
+    div {
+      .displayFlex(row);
+      align-content: space-around;
+      flex-wrap: wrap;
+      height: @expand;
+      width: @expand;
+    }
+    p {
+      width: @expand;
+    }
   }
 
   .skills section {
     h4 {
       font-size: @quoteFontSize;
       color: @skills;
-      font-weight: bold;
+      font-weight: @bold;
       text-align: left;
     }
     li {
       display: inline-block;
-      font-size: 2rem;
+      font-size: 3rem;
       border: 0.15rem solid @red;
       border-radius: @rating-radius;
       height: @rating-H;
       width: @rating-W;
       margin: @allPadding;
-      &.full {
-        background-color: @red;
-      }
+    }
+    &.full {
+      background-color: @red;
     }
   }
-  .box.work {
-    align-items: center;
-    flex-direction: column;
-    border-bottom: none;
-    ul {
-      padding: @top-bottomPadding;
-      width: @expand;
-      display: flex;
-      justify-content: space-around;
-    }
+
+  .work {
+    padding: @top-bottomPadding;
+    width: @expand;
+    .displayFlex(row);
+    justify-content: space-around;
   }
 }
