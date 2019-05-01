@@ -30,6 +30,7 @@
     width: @imgW;
     border-radius: @imgBr;
     box-shadow: @mainShadow;
+    border: @borderImg;
   }
   //content that englobes everything in the middle
   .main-content {
@@ -68,7 +69,7 @@
       .displayFlex(row);
       justify-content: space-between;
       padding: @sidesPadding;
-      border-bottom: 0.2rem solid @bg;
+      border-bottom: @borderBottom;
     }
     .top {
       .displayFlex(column);
@@ -78,6 +79,7 @@
         width: auto;
         border-radius: 0%;
         box-shadow: none;
+        border: none;
         align-self: flex-end;
         margin: @top-bottomPadding;
         margin-right: 2rem;
