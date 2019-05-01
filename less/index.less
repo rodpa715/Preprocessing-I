@@ -45,9 +45,7 @@
     width: @expand;
     background-color: @red;
     .displayFlex(row);
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    .flex-wrap-justify-align-content(space-around, center, wrap);
     padding: @top-bottomPadding;
     box-shadow: @secondaryShadow;
     p {
@@ -99,14 +97,12 @@
     .personal section {
       height: 80%;
       .displayFlex(column);
-      flex-wrap: wrap;
-      justify-content: center;
+      .flex-wrap-justify-align-content(center, initial, initial);
       width: @expand;
       
       div {
         .displayFlex(row);
-        align-content: space-around;
-        flex-wrap: wrap;
+        .flex-wrap-justify-align-content(initial, initial, space-around);
         height: @expand;
         width: @expand;
       }
