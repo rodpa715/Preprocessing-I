@@ -218,6 +218,7 @@ em {
   border-radius: 0%;
   box-shadow: none;
   align-self: flex-end;
+  margin: 2rem 0;
   margin-right: 2rem;
 }
 .container .about {
@@ -237,6 +238,7 @@ em {
 }
 .container .content .box {
   display: flex;
+  justify-content: space-between;
   padding: 0 1.5rem;
   border-bottom: 0.2rem solid #1f1f1f;
 }
@@ -253,13 +255,13 @@ em {
   flex-direction: column;
   justify-content: space-around;
 }
-.container .languages section h4 {
+.container .skills section h4 {
   font-size: 1.2rem;
   color: #808080;
   font-weight: bold;
   text-align: left;
 }
-.container .languages section li {
+.container .skills section li {
   display: inline-block;
   font-size: 2rem;
   border: 0.1rem solid #d24c4b;
@@ -268,7 +270,7 @@ em {
   width: 0.6em;
   margin: 1rem;
 }
-.container .languages section li.full {
+.container .skills section li.full {
   background-color: #d24c4b;
 }
 .container .box.work {
