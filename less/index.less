@@ -1,5 +1,6 @@
 @import "./reset.less";
 @import "./font-prop.less";
+@import "./colors.less";
 @import "mixin.less";
 
 //image size
@@ -7,42 +8,43 @@
 @imgW: 15rem;
 @imgBr: 50%;
 // shadow
-@mainShadow: 0px 0px 16px 2px rgba(0,0,0,0.45);
+@mainShadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.45);
 
 /* CSS */
 
-body {
-  line-height: @bodyLH;
-  color: antiquewhite;
-  background-color: #1f1f1f;
-  h1 {
-    font-size: @headlineFontSize;
-  }
-  h2 {
-    font-size: @titleFontSize;
-  }
-  p {
-    font-size: @paragraphFontSize;
-    line-height: @paragraphLH;
-  }
-  h3 {
-    font-size: @subtitleFontSize;
-  }
-  a {
-    font-size: @anchorFontSize;
-    text-decoration: none;
-    color: rgb(209, 209, 209);
-
-    &:hover {
-      color: rgb(255, 255, 255);
-    }
+body{
+line-height: @bodyLH;
+color: @white;
+background-color: @bg;
+}
+h1 {
+  font-size: @headlineFontSize;
+}
+h2 {
+  font-size: @titleFontSize;
+}
+p {
+  font-size: @paragraphFontSize;
+  line-height: @paragraphLH;
+}
+h3 {
+  font-size: @subtitleFontSize;
+}
+a {
+  font-size: @anchorFontSize;
+  text-decoration: none;
+  color: @anchor;
+  &:hover {
+    color: @anchorHover;
   }
 }
+
 .container {
   margin: 0 auto;
   max-width: 750px;
   width: 100%;
-  .dispFlex(column);
+  display: flex;
+  flex-direction: column;
   align-content: center;
   header, footer {
     display: flex;
@@ -56,14 +58,15 @@ body {
   }
   .maincontent {
     width: 100%;
-    .dispFlex(column);
-    background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    background-color: @innerBg;
     padding: 1rem;
     box-shadow: @mainShadow;
     //topcontent
     .top-content {
       width: 100%;
-      background-color: #d24c4b;
+      background-color: @red;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -81,7 +84,8 @@ body {
     }
     //middle content
     .content {
-      .dispFlex(column);
+      display: flex;
+      flex-direction: column;
       .box {
         display: flex;
         padding: 2%;
@@ -94,9 +98,10 @@ body {
         }
       }
       .about {
-        .dispFlex(column);
+        display: flex;
+        flex-direction: column;
         text-align: justify;
-  
+
         .signature {
           height: @titleFontSize;
           align-self: flex-end;
@@ -109,13 +114,14 @@ body {
         div {
           width: 48%;
         }
-        h2{
+        h2 {
           margin-bottom: 2.5rem;
         }
         .personal {
           section {
             height: 80%;
-            .dispFlex(column);
+            display: flex;
+            flex-direction: column;
             justify-content: space-around;
             em {
               font-weight: bold;
@@ -124,37 +130,37 @@ body {
         }
         .languages {
           section {
-            h4{
+            h4 {
               font-size: @quoteFontSize;
               color: grey;
               font-weight: bold;
-              text-align: left
+              text-align: left;
             }
             li {
               display: inline-block;
               font-size: 2rem;
-              border: 2px solid #d24c4b;
+              border: 2px solid @red;
               border-radius: 50%;
               height: 0.6em;
               width: 0.6em;
               margin: 1rem;
-              &.full{
-                background-color: #d24c4b;
+              &.full {
+                background-color: @red;
               }
             }
           }
         }
       }
-      .work{
+      .work {
         align-items: center;
         flex-direction: column;
         border-bottom: none;
-        ul{
+        ul {
           padding: 2rem 0;
           width: 100%;
           display: flex;
           justify-content: space-around;
-          img{
+          img {
             height: @imgH;
             width: @imgW;
             border-radius: @imgBr;
@@ -165,4 +171,3 @@ body {
     }
   }
 }
-

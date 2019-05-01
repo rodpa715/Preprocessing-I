@@ -1,1 +1,291 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+:root {
+  font-size: 62.5%;
+}
+/* CSS */
+body {
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #1f1f1f;
+}
+h1 {
+  font-size: 3.2rem;
+}
+h2 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+h3 {
+  font-size: 1.3rem;
+}
+a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #faebd7;
+}
+a:hover {
+  color: #ffffff;
+}
+.container {
+  margin: 0 auto;
+  max-width: 750px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.container header,
+.container footer {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 1rem;
+}
+.container header nav,
+.container footer nav {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+.container .maincontent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #383838;
+  padding: 1rem;
+  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.45);
+}
+.container .maincontent .top-content {
+  width: 100%;
+  background-color: #d24c4b;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+.container .maincontent .top-content p {
+  font-size: 1.2rem;
+}
+.container .maincontent .top-content div img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.45);
+}
+.container .maincontent .content {
+  display: flex;
+  flex-direction: column;
+}
+.container .maincontent .content .box {
+  display: flex;
+  padding: 2%;
+  border-bottom: 2px solid #1f1f1f;
+}
+.container .maincontent .content .box h2 {
+  margin: 1rem 0;
+}
+.container .maincontent .content .box h3 {
+  font-weight: bold;
+}
+.container .maincontent .content .about {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+.container .maincontent .content .about .signature {
+  height: 2rem;
+  align-self: flex-end;
+  margin-right: 2rem;
+}
+.container .maincontent .content .general {
+  display: flex;
+  flex-direction: row;
+}
+.container .maincontent .content .general div {
+  width: 48%;
+}
+.container .maincontent .content .general h2 {
+  margin-bottom: 2.5rem;
+}
+.container .maincontent .content .general .personal section {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container .maincontent .content .general .personal section em {
+  font-weight: bold;
+}
+.container .maincontent .content .general .languages section h4 {
+  font-size: 1.2rem;
+  color: grey;
+  font-weight: bold;
+  text-align: left;
+}
+.container .maincontent .content .general .languages section li {
+  display: inline-block;
+  font-size: 2rem;
+  border: 2px solid #d24c4b;
+  border-radius: 50%;
+  height: 0.6em;
+  width: 0.6em;
+  margin: 1rem;
+}
+.container .maincontent .content .general .languages section li.full {
+  background-color: #d24c4b;
+}
+.container .maincontent .content .work {
+  align-items: center;
+  flex-direction: column;
+  border-bottom: none;
+}
+.container .maincontent .content .work ul {
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.container .maincontent .content .work ul img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.45);
+}
