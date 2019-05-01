@@ -2,13 +2,7 @@
 @import "./font-prop.less";
 @import "./colors.less";
 @import "mixin.less";
-
-//image size
-@imgH: 15rem;
-@imgW: 15rem;
-@imgBr: 50%;
-// shadow
-@mainShadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.45);
+@import "./general.less";
 
 /* CSS */
 
@@ -49,7 +43,7 @@ a {
   header, footer {
     display: flex;
     flex-direction: row-reverse;
-    padding: 1rem;
+    padding: @allPadding;
     nav {
       display: flex;
       width: 50%;
@@ -61,35 +55,35 @@ a {
     display: flex;
     flex-direction: column;
     background-color: @innerBg;
-    padding: 1rem;
+    padding: @allPadding;
     box-shadow: @mainShadow;
-    //topcontent
-    .top-content {
-      width: 100%;
-      background-color: @red;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 2rem 0;
-      p {
-        font-size: @quoteFontSize;
-      }
-      div img {
-        height: @imgH;
-        width: @imgW;
-        border-radius: @imgBr;
-        box-shadow: @mainShadow;
-      }
+  }
+  .top-content {
+    width: 100%;
+    background-color: @red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: @top-bottomPadding;
+    p {
+      font-size: @quoteFontSize;
     }
-    //middle content
+    img {
+      height: @imgH;
+      width: @imgW;
+      border-radius: @imgBr;
+      box-shadow: @mainShadow;
+    }
+  }
+    
     .content {
       display: flex;
       flex-direction: column;
       .box {
         display: flex;
         padding: 2%;
-        border-bottom: 2px solid #1f1f1f;
+        border-bottom: 0.2rem solid #1f1f1f;
         h2 {
           margin: 1rem 0;
         }
@@ -139,11 +133,11 @@ a {
             li {
               display: inline-block;
               font-size: 2rem;
-              border: 2px solid @red;
-              border-radius: 50%;
-              height: 0.6em;
-              width: 0.6em;
-              margin: 1rem;
+              border: 0.1rem solid @red;
+              border-radius: @rating-radius;
+              height: @rating-H;
+              width: @rating-W;
+              margin: @allPadding;
               &.full {
                 background-color: @red;
               }
@@ -156,7 +150,7 @@ a {
         flex-direction: column;
         border-bottom: none;
         ul {
-          padding: 2rem 0;
+          padding: @top-bottomPadding;
           width: 100%;
           display: flex;
           justify-content: space-around;
@@ -169,5 +163,5 @@ a {
         }
       }
     }
-  }
+  
 }
