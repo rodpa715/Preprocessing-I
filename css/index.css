@@ -140,20 +140,20 @@ body {
   background-color: #1f1f1f;
 }
 h1 {
-  font-size: 3.2rem;
+  font-size: 3.6rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.4;
 }
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 a {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-decoration: none;
   color: #faebd7;
 }
@@ -165,6 +165,19 @@ em {
 }
 :root {
   font-size: 62.5%;
+  font-family: "Ubuntu", Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKfw7z.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCv6KVjbNBYlgoCxCvjsGyI.ttf) format('truetype');
 }
 /* CSS */
 .container {
@@ -174,6 +187,7 @@ em {
   display: flex;
   flex-direction: column;
   align-content: center;
+  flex-wrap: wrap;
 }
 .container header,
 .container footer {
@@ -181,16 +195,35 @@ em {
   flex-direction: row-reverse;
   padding: 1rem;
 }
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 600px;
+  }
+}
 .container nav {
   display: flex;
+  flex-direction: row;
   width: 50%;
   justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .container nav {
+    width: 100%;
+  }
 }
 .container img {
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
-  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.45);
+  box-shadow: 0rem 0rem 1.6rem 0.2rem rgba(0, 0, 0, 0.45);
+  border: 0.5rem solid #ffffff;
+}
+@media screen and (max-width: 600px) {
+  .container img {
+    height: 9.5rem;
+    width: 9.5rem;
+  }
 }
 .container .main-content {
   width: 100%;
@@ -198,89 +231,177 @@ em {
   flex-direction: column;
   background-color: #383838;
   padding: 1rem;
-  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.45);
+  box-shadow: 0rem 0rem 1.6rem 0.2rem rgba(0, 0, 0, 0.45);
 }
-.container .top-content {
+.container .banner {
   width: 100%;
   background-color: #d24c4b;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
+  align-content: wrap;
   padding: 2rem 0;
+  box-shadow: 0rem 0rem 0.5rem 0.2rem rgba(0, 0, 0, 0.25);
 }
-.container .top-content p {
-  font-size: 1.2rem;
+@media screen and (max-width: 600px) {
+  .container .banner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
-.container .signature {
-  height: 2.5rem;
-  width: auto;
-  border-radius: 0%;
-  box-shadow: none;
-  align-self: flex-end;
-  margin: 2rem 0;
-  margin-right: 2rem;
-}
-.container .about {
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
+.container .banner p {
+  font-size: 1.6rem;
+  color: #580d17;
+  font-weight: bold;
 }
 .container .content {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 600px) {
+  .container .content {
+    padding: 0;
+  }
 }
 .container .content h2 {
   margin: 1.6rem 0;
+}
+@media screen and (max-width: 600px) {
+  .container .content h2 {
+    text-align: center;
+  }
 }
 .container .content h3 {
   font-weight: bold;
 }
 .container .content .box {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  padding: 0 1.5rem;
   border-bottom: 0.2rem solid #1f1f1f;
 }
-.container .general {
+.container .content .top {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+.container .content .top .signature {
+  height: 2.5rem;
+  width: auto;
+  border-radius: 0%;
+  box-shadow: none;
+  border: none;
+  align-self: flex-end;
+  margin: 2rem 0;
+  margin-right: 2rem;
+}
+.container .content .middle {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.container .general div {
-  width: 48%;
+@media screen and (max-width: 600px) {
+  .container .content .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .container .content .middle .personal {
+    padding-bottom: 1.5rem;
+    border-bottom: 0.2rem solid #1f1f1f;
+    text-align: center;
+  }
+  .container .content .middle .skills {
+    justify-self: center;
+  }
+  .container .content .middle h4 {
+    text-align: center;
+  }
+  .container .content .middle h2 {
+    margin: 0.5rem 0;
+  }
+  .container .content .middle p {
+    line-height: 2;
+  }
+  .container .content .middle div {
+    width: 100%;
+  }
 }
-.container .personal section {
+.container .content .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: none;
+}
+.container .content .personal section {
   height: 80%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: initial;
+  align-content: initial;
+  width: 100%;
+}
+.container .content .personal section div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
+  align-items: initial;
+  align-content: flex-start;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  .container .content .personal section div {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: initial;
+    align-content: center;
+  }
 }
 .container .skills section h4 {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #808080;
   font-weight: bold;
-  text-align: left;
+}
+.container .skills section ul {
+  display: flex;
+}
+@media screen and (max-width: 600px) {
+  .container .skills section ul {
+    justify-content: center;
+  }
 }
 .container .skills section li {
-  display: inline-block;
-  font-size: 2rem;
-  border: 0.1rem solid #d24c4b;
+  border: 0.2rem solid #d24c4b;
   border-radius: 50%;
-  height: 0.6em;
-  width: 0.6em;
+  height: 1.6rem;
+  width: 1.6rem;
   margin: 1rem;
 }
-.container .skills section li.full {
+.container .skills section .full {
   background-color: #d24c4b;
 }
-.container .box.work {
-  align-items: center;
-  flex-direction: column;
-  border-bottom: none;
-}
-.container .box.work ul {
+.container .work {
   padding: 2rem 0;
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+}
+@media screen and (max-width: 600px) {
+  .container .work {
+    padding: 0;
+  }
+  .container .work img {
+    border-radius: 5%;
+  }
 }
